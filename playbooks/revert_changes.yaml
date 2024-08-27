@@ -8,13 +8,6 @@
         update_cache: yes
         state: latest
 
-    - name: enable mod_rewrite
-      apache2_module:
-        name: rewrite
-        state: present
-      notify:
-        - restart apache2
-
     - name: apache2 listen on port 8081
       lineinfile:
         dest: /etc/apache2/ports.conf
