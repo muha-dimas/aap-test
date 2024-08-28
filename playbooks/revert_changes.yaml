@@ -2,13 +2,13 @@
 - hosts: 13.215.194.130
   become: yes
   tasks:
-    - name: install apache2
+    - name: Checking if backup is available
       apt:
         name: apache2
         update_cache: yes
         state: latest
 
-    - name: apache2 listen on port 8081
+    - name: Reverting changes from update to backup
       lineinfile:
         dest: /etc/apache2/ports.conf
         regexp: "^Listen 8081"
