@@ -16,7 +16,7 @@
       notify:
         - restart apache2
         
-    - name: Pulling update from repository
+    - name: Update apache2 file
       lineinfile:
         dest: /etc/apache2/ports.conf
         regexp: "^Listen 8080"
