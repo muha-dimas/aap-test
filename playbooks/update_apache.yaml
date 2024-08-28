@@ -11,8 +11,8 @@
     - name: Copying files to /backup
       lineinfile:
         dest: /etc/apache2/ports.conf
-        regexp: "^Listen 8080"
-        line: "Listen 8081"
+        regexp: "^Listen 80"
+        line: "Listen 8080"
       notify:
         - restart apache2
         
